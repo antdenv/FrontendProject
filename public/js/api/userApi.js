@@ -2,9 +2,10 @@ class User{
     constructor() {
         this.id = -1
     }
-    id;
-    email;
-    password;
+
+    id
+    email
+    password
     firstName
     lastName
     birthday
@@ -13,6 +14,7 @@ class User{
     aboutUser
     userId
     gender
+
     async checkLogin(){
         let response = await fetch('http://localhost:8080/users', {
             method: "GET",
@@ -219,9 +221,6 @@ function changeProfile(){
         alert(msg)
     })
 }
-
-
-
 
 function auth(){
     user.checkLogin().then(bool =>{

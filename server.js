@@ -1,34 +1,54 @@
-const http = require('http');
-const fs = require('fs');
-const mime = require('mime');
+/*const SERVER_PORT = 3000;
+import { createServer } from 'http';
+import { readFile } from 'fs';
+import debug from 'debug';
+import pkg from 'mime';
+const {getType} = pkg;
+
+const log = debug('server');
+
+const server = createServer((req, res) => {
+    const {url} = req;
+    log('request', url);
+
+    const fileName = url === '/' ? '/index.html' : url;
+    let filePath = './public/index.html';
+    console.log(filePath);
+    readFile(filePath, (err, file) => {
+        if(err) {
+            res.writeHead(302, {
+                'Location': '/'
+            });
+            res.end();
+            return;
+        }
+
+        res.setHeader(
+            'Content-Type',
+            getType(filePath.slice(filePath.lastIndexOf('.') + 1)),
+        );
+        res.write(file);
+        res.end();
+    });
+});
+
+server.listen(SERVER_PORT);*/
+
+import {createServer} from 'http';
+import {readFile} from 'fs';
+import pkg from 'mime';
+import {appPages, appPagesPatterns, subDomains} from './public/urls.js';
+const {getType} = pkg;
 
 const port = 3000;
 const ip = 'localhost';
-
-const noBuilder = true;
 
 const appRootDir = 'public';
 const indexHTML = 'index.html';
 
 const CORS = '*';
 
-const appPages = [
-    '/',
-    '/profile',
-    '/profile/settings',
-    '/login',
-    '/registration',
-];
-
-const appPagesPatterns = [
-    /^\/profile\/([\w0-9_\-%&=\?\+]+)$/,
-];
-
-const subDomains = [
-    '/profile/',
-];
-
-const server = http.createServer((req, res) => {
+const server = createServer((req, res) => {
     if (req.method === 'OPTIONS') {
         res.setHeader('Access-Control-Allow-Origin', CORS);
         res.end();
@@ -62,14 +82,14 @@ const server = http.createServer((req, res) => {
         path = indexHTML;
     }
 
-    fs.readFile(`./${appRootDir}/${path}`, (err, data) => {
+    readFile(`./${appRootDir}/${path}`, (err, data) => {
         if (err) {
             data = ''; // 404 page
         }
 
         res.setHeader(
             'Content-Type',
-            mime.getType(path.slice(path.lastIndexOf('.') + 1)),
+            getType(path.slice(path.lastIndexOf('.') + 1)),
         );
 
         res.write(data);

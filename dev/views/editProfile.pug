@@ -44,12 +44,12 @@ mixin createMessage()
         .profile__user
             .user__avatar 
                 img(src=avatar class="avatar__img")
-            .user__info__block
-                .user__info
+            .user__info
+                .info
                     +userInfo("David Jones, " ,23, "New York")
-                .user__settings
-                    .settings
-                        img(src=`${settings}`)
+                .settings
+                    .settings__link
+                        img(src=`${settings}` class="link__img")
                         a(href="/profile/settings" class="settings__edit") Edit profile
         .profile__navigation
             .navigation__profile 

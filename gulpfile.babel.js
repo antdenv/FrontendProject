@@ -6,7 +6,7 @@ import eslint from 'gulp-eslint';
  * @type {{js: string}}
  */
 const paths = {
-    js: './src/**/*.js',
+    dev: './public/**/*.js',
 };
  
 /**
@@ -14,7 +14,7 @@ const paths = {
  * @return {*}
  */
 function testJsLint() {
-    return gulp.src(paths.js).
+    return gulp.src(paths.dev).
            pipe(eslint()).
            pipe(eslint.format()).
            pipe(eslint.failAfterError());

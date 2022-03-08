@@ -1,0 +1,10 @@
+.signup {
+  width: 700px;
+  height: 670px;
+  background-color: #fff;
+  padding: 30px 0;
+  border-radius: 28px;
+}
+.signup .form__login, .signup .form__password {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,219 @@
+.overlay {
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(#5a476e, #000000);
+  opacity: 65%;
+  position: absolute;
+  z-index: 2;
+}
+@media (max-width: 1600px) {
+  .overlay {
+    background-repeat: repeat-x;
+    opacity: 85%;
+  }
+}
+@media (max-width: 1150px) {
+  .overlay {
+    opacity: 95%;
+  }
+}
+
+.content__authorize {
+  width: 700px;
+  height: 630px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  opacity: 100%;
+  border-radius: 28px;
+  z-index: 3;
+}
+@media (max-width: 1400px) {
+  .content__authorize {
+    width: 650px;
+    height: 620px;
+  }
+  .content__authorize .form__login, .content__authorize .form__password {
+    width: 500px;
+    height: 52px;
+  }
+}
+@media (max-width: 1150px) {
+  .content__authorize {
+    width: 650px;
+    height: 620px;
+  }
+}
+@media (max-width: 700px) {
+  .content__authorize {
+    width: 550px;
+    height: 600px;
+  }
+  .content__authorize .form__login, .content__authorize .form__password {
+    width: 400px;
+    height: 48px;
+  }
+  .content__authorize .form__button {
+    width: 360px;
+    height: 48px;
+  }
+}
+@media (max-width: 580px) {
+  .content__authorize {
+    width: 450px;
+    height: 620px;
+  }
+  .content__authorize .form__login, .content__authorize .form__password {
+    width: 340px;
+    height: 44px;
+  }
+  .content__authorize .form__button {
+    width: 310px;
+    height: 44px;
+  }
+  .content__authorize .form__text__email, .content__authorize .form__text__password {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  .content__authorize {
+    width: 330px;
+    height: 560px;
+  }
+  .content__authorize .logo__text {
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+  .content__authorize .form__create-new-account, .content__authorize .form__sign-in {
+    font-size: 13px;
+  }
+  .content__authorize .form__login, .content__authorize .form__password {
+    width: 230px;
+    height: 40px;
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+  .content__authorize .form__text {
+    font-size: 26px;
+    margin-bottom: 18px;
+  }
+  .content__authorize .form__button {
+    width: 210px;
+    height: 40px;
+    font-size: 14px;
+    margin-top: 0;
+  }
+  .content__authorize .form__text__email, .content__authorize .form__text__password {
+    font-size: 14px;
+    margin-bottom: 8px;
+    margin-left: 0;
+    text-align: center;
+  }
+}
+.content__authorize .authorize__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.content__authorize .authorize__logo .logo__text {
+  font-size: 36px;
+  margin-bottom: 0px;
+  margin-top: -12px;
+  background: linear-gradient(#000 30%, #8955fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  letter-spacing: 1%;
+}
+.content__authorize .form__create-new-account, .content__authorize .form__sign-in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 18px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+.content__authorize .form__create-new-account p, .content__authorize .form__sign-in p {
+  margin-right: 12px;
+}
+.content__authorize .form__create-new-account a, .content__authorize .form__sign-in a {
+  text-decoration: none;
+  color: #3300FF;
+  opacity: 75%;
+}
+.content__authorize .form__create-new-account a:hover, .content__authorize .form__sign-in a:hover {
+  opacity: 90%;
+}
+.content__authorize .authorize__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.content__authorize .authorize__form form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 14px 0;
+}
+.content__authorize .authorize__form .form__text {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.content__authorize .authorize__form .form__error {
+  width: 515px;
+  text-align: center;
+  color: #CF5151;
+  font-weight: 500;
+  visibility: hidden;
+}
+.content__authorize .authorize__form .form__login, .content__authorize .authorize__form .form__password {
+  width: 515px;
+  height: 52px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  overflow: none;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid #594c74;
+  opacity: 50%;
+  padding-left: 20px;
+  color: black;
+}
+.content__authorize .authorize__form .form__button {
+  font-size: 22px;
+  margin-bottom: 8px;
+  width: 535px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 15px;
+  overflow: none;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 16px;
+  font-weight: 500;
+  border: none;
+  color: #fff;
+  background: linear-gradient(45deg, #9F93E3, #8067EF, #6843FD);
+}
+.content__authorize .authorize__form .form__button:hover {
+  background: linear-gradient(45deg, #7e6fd6, #6548e9, #542afd);
+}
+.content__authorize .authorize__form .form__text__email, .content__authorize .authorize__form .form__text__password {
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 14px;
+  font-weight: 500;
+  color: #696969;
+}
